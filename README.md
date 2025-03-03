@@ -46,9 +46,9 @@ MVPリリース（APEX特化）
 ・レーティング・レビュー機能
 
 ■ 機能の実装方針予定
-・ユーザー登録・プロフィール設定：一般的なCRUD
+・ユーザー登録・プロフィール設定：一般的なCRUD（Devise, OmniAuth、ActiveStorag）
 ・募集掲示板機能（一時的なパーティ募集）：ActionCable、Ransack、Elasticsearch
 ・プレイヤー検索機能（長期フレンド探し）：Ransack、Elasticsearch
-・リアルタイムチャット機能：ActionCable
-・フレンド申請機能：一般的なCRUD
+・リアルタイムチャット機能：ActionCable、Redis
+・フレンド申請機能：一般的なCRUD（ActiveRecord）
 ・本リリースでの拡張（他ゲーム対応）：データ構造をゲームごとにカスタマイズ可能な形に設計
