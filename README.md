@@ -47,6 +47,9 @@ MVPリリース（APEX特化）
 
 ■ 機能の実装方針予定
 ・ユーザー登録・プロフィール設定：一般的なCRUD（Devise, OmniAuth、ActiveStorag）
+・ログイン機能：Devise（メール認証、SNSログイン対応）
+・パスワード変更機能：Devise（パスワードリセット機能）、メール通知（ActionMailer）
+・メールアドレス変更機能：Devise（再認証あり）、メール確認（ActionMailer）
 ・募集掲示板機能（一時的なパーティ募集）：ActionCable、Ransack、Elasticsearch
 ・プレイヤー検索機能（長期フレンド探し）：Ransack、Elasticsearch
 ・リアルタイムチャット機能：ActionCable、Redis
