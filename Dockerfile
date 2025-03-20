@@ -1,20 +1,20 @@
-FROM ruby:3.0
+FROM ruby:2.7.4
 
-# 必要なパッケージをインストール
+# 必要なパッケージのインストール
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
-# 作業ディレクトリを指定
+# 作業ディレクトリの指定
 WORKDIR /myapp
 
-# Gemfile と Gemfile.lock をコピー
+# Gemfile をコンテナにコピー
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
-# bundler をインストールして gem をインストール
+# bundler をインストールして、gem をインストール
 RUN bundle install
 
-# アプリケーションコードをコピー
+# アプリケーションコードをコンテナにコピー
 COPY . /myapp
 
-# Rails サーバーを起動するコマンド
+# Rails サーバーを起動
 CMD ["rails", "server", "-b", "0.0.0.0"]

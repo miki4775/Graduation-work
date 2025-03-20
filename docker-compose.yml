@@ -1,16 +1,18 @@
 version: '3.8'
+
 services:
   app:
     build: .
     container_name: graduation_work_app
     volumes:
-      - .:/app
+      - ".:/myapp"
     ports:
       - "3000:3000"
     depends_on:
       - db
     stdin_open: true
     tty: true
+
   db:
     image: postgres:15
     container_name: graduation_work_db
