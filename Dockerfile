@@ -1,4 +1,4 @@
-FROM ruby:2.7.4
+FROM ruby:3.0.0
 
 # 必要なパッケージのインストール
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
@@ -8,7 +8,9 @@ WORKDIR /myapp
 
 # Gemfile をコンテナにコピー
 COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+
+# 空のGemfile.lockを作成
+RUN touch /myapp/Gemfile.lock
 
 # bundler をインストールして、gem をインストール
 RUN bundle install
