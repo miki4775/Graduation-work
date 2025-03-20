@@ -1,7 +1,10 @@
-FROM ruby:2.7.4
+FROM ruby:3.2.0
 
 # 必要なパッケージのインストール
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+
+# RubyGemsを最新バージョンに更新
+RUN gem update --system
 
 # 作業ディレクトリの指定
 WORKDIR /myapp
